@@ -18,17 +18,65 @@
   <head>
     <style>
       /*
-            EX1) Write a selector to target the h1 in jumbotron
-            EX2) Write a selector to target every children of the navbar
-            EX3) Write a selector to target the "continue reading..." inside the jumbotron
-            EX4) Write a selector to target the first blogpost
-            EX5) Write a selector to target the "even" links in the navbar
-            EX6) Write a selector to target the last blog post
-            EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
-            EX8) Write a selector to target the second post author
-            EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
+            EX1) Write a selector to target the h1 in jumbotron +
+            EX2) Write a selector to target every children of the navbar +
+            EX3) Write a selector to target the "continue reading..." inside the jumbotron +
+            EX4) Write a selector to target the first blogpost ?
+            EX5) Write a selector to target the "even" links in the navbar +
+            EX6) Write a selector to target the last blog post ?
+            EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives ) ?
+            EX8) Write a selector to target the second post author ?
+            EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly ?
             EX10) Write a selector to target the footer
         */
+        /* ex1 */
+        .jumbotron .display-4 {
+            color: rgb(240, 13, 13);
+        }
+        /* ex2 */
+
+        .nav-scroller .nav a{
+            color: rgb(250, 12, 12)!important;
+        }
+        /* ex3 */
+
+        .jumbotron .lead a{
+            color: brown!important;
+        }
+        /* ex4 */
+
+        .row .col-md-6 .row .col{
+            background-color: brown;
+        }
+        /* ex5 */
+
+        .nav-scroller .nav a:nth-child(even){
+            color: rgb(16, 37, 231)!important;
+        }
+        /* ex6 */
+
+        .row .col-md-6 .row .col{
+            background-color: brown;
+        }
+        /* ex7 */
+
+        .col-md-4 .p-4 .list-unstyled li a{
+            color: brown!important;
+        }
+        /* ex8 */
+        .blog-post {
+            background-color: brown;
+        } 
+        /* ex9 */
+
+        footer p a {
+            color: brown;
+        }
+        /* ex10 */
+        footer{
+            background-color: brown;
+        }
+
     </style>
     <meta charset="utf-8" />
     <meta
