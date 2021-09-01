@@ -516,7 +516,7 @@
         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
     */
 
-        /* ex10 */
+        /* ex11 */
         const newLinkNavBar = function(){
             let newLinkNavbar = document.querySelector(".container")
             newLinkNavbar.innerHTML = "New Navigation"
@@ -544,6 +544,72 @@
                 removeLinksElsewhere[i].remove()
             }
         }
+
+        /* ex15 */
+        
+      const removeSearch = function () {
+        const div = document.querySelector(
+          ".blog-header .row div:last-of-type"
+        );
+        console.log(div);
+        div.children[0].remove();
+      };
+      removeSearch();
+
+        /* ex16 */
+
+      const addNewPost = (title = "New Post") => {
+        const parentElement = document.querySelector(".blog-main");
+        const nextSibling = document.querySelector(".blog-pagination");
+
+        const newPostDiv = document.createElement("div");
+        newPostDiv.classList.add("blog-post");
+
+        const newPostTitle = document.createElement("h2");
+        newPostTitle.classList.add("blog-post-title");
+        newPostTitle.innerText = title;
+
+        newPostDiv.appendChild(newPostTitle);
+        parentElement.insertBefore(newPostDiv, nextSibling);
+      };
+      addNewPost();
+
+        /* ex17 */
+
+      const removeLastBlog = function () {
+        const btn = document.querySelectorAll(".blog-pagination a")[0];
+        btn.removeAttribute("href");
+        btn.addEventListener("click", function () {
+          const blogs = document.querySelectorAll(".blog-post");
+          blogs[blogs.length - 1].remove();
+        });
+      };
+      removeLastBlog();
+
+        /* ex18 */
+
+      const alertAuthors = function () {
+        const authors = document.querySelectorAll(
+          " main .blog-main .blog-post > h2 + p > a"
+        );
+        authors.forEach((a) => {
+          a.addEventListener("mouseenter", function (e) {
+            alert(e.target.innerText);
+          });
+        });
+      };
+      alertAuthors();
+
+        /* ex19 */
+
+      const trimPost = function () {
+        const posts = document.querySelectorAll(".blog-post p:nth-child(3)");
+        console.log(posts);
+        posts.forEach((post) => {
+          post.innerText = post.innerText.substring(150);
+        });
+      };
+      //trimPost();
     </script>
   </body>
 </html>
