@@ -16,89 +16,49 @@
     -->
 
   <head>
-        <link
-        rel="canonical"
-        href="https://getbootstrap.com/docs/4.3/examples/blog/"
-    />
-
-    <!-- Bootstrap core CSS -->
-    <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous"
-    />
     <style>
       /*
-            EX1) Write a selector to target the h1 in jumbotron +
-            EX2) Write a selector to target every children of the navbar +
-            EX3) Write a selector to target the "continue reading..." inside the jumbotron +
-            EX4) Write a selector to target the first blogpost +
-            EX5) Write a selector to target the "even" links in the navbar +
-            EX6) Write a selector to target the last blog post +
-            EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives ) +
-            EX8) Write a selector to target the second post author +
-            EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly ?
-            EX10) Write a selector to target the footer +
+            EX1) Write a selector to target the title of the page
+            
+            EX2) Write a selector to target every children of the navbar
+            EX3) Write a selector to target the "continue reading..." inside the jumbotron
+            EX4) Write a selector to target the first blogpost
+            EX5) Write a selector to target the "even" links in the navbar 
+            EX6) Write a selector to target the last blog post
+            EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
+            EX8) Write a selector to target the second post author
+            EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
+            EX10) Write a selector to target the footer
         */
-        /* ex1 */
-        .jumbotron .display-4 {
-            color: rgb(240, 13, 13);
-        }
-        /* ex2 */
 
-        .nav-scroller .nav a{
-            color: rgb(250, 12, 12)!important;
-        }
-        /* ex3 */
-
-        .jumbotron .lead a{
-            color: rgb(75, 118, 238)!important;
-        }
-        /* ex4 */
-
-        .container .row .blog-main .blog-post:nth-of-type(1){
-            background-color: rgb(94, 235, 235);
-        }
-        /* ex5 */
-
-        .nav-scroller .nav a:nth-child(even){
-            color: rgb(16, 37, 231)!important;
-        }
-        /* ex6 */
-
-        .container .row .blog-main .blog-post:nth-last-of-type(1){
-            background-color: rgb(70, 202, 235);
-        }
-        /* ex7 */
-
-        .blog-sidebar div:nth-child(2) > ol > li{
-            background-color: rgb(82, 241, 104)!important;
-        }
-        /* ex8 */
-        .container .row .blog-post:nth-child(3) > .blog-post-meta > a{
-            background-color: rgb(165, 42, 134);
-        } 
-        /* ex9 */
-
-        footer p a {
-            color: brown;
-        }
-        /* ex10 */
-        footer{
-            background-color: rgb(0, 0, 0);
-        }
-       /*-------------------------------------- */
-        .myHeading{
-            color: darkblue!important;
-        }
-        .myJumbotron{
-            background-color: darkblue!important;
-        }
-
-
-       /*-------------------------------------- */
-
+      .jumbotron h1 {
+        color: red;
+      }
+      nav.nav > a {
+      }
+      .jumbotron .col-md-6 p:last-of-type a {
+        color: blue !important;
+      }
+      main .blog-main > h3 + .blog-post {
+      }
+      nav.nav > a:nth-child(2n) {
+        color: red !important;
+      }
+      main .blog-main .blog-post:last-of-type {
+        color: red !important;
+      }
+      main .blog-sidebar div:nth-child(2) > ol > li {
+        background-color: brown !important;
+      }
+      main .blog-main .blog-post:nth-child(3) > h2 + p > a {
+        color: chartreuse !important;
+      }
+      p:last-of-type > a {
+        color: coral !important;
+      }
+      footer {
+        background-color: crimson !important;
+      }
     </style>
     <meta charset="utf-8" />
     <meta
@@ -113,7 +73,18 @@
     <meta name="generator" content="Jekyll v3.8.5" />
     <title>Blog Template · Bootstrap</title>
 
-    
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/blog/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <style>
       .bd-placeholder-img {
@@ -504,46 +475,103 @@
     <script>
       /*
         JS Exercises
-        EX11) Write a function to add a new link into the navbar ?
-        EX12) Write a function to change the color of the main title +
-        EX13) Write a function to change the background of the jumbotron+
+        EX11) Write a function to add a new link into the navbar
+        EX12) Write a function to change the color of the main title
+        EX13) Write a function to change the background of the jumbotron
         EX14) Write a function to remove all the links under "Elsewhere"
-        EX15) Write a function to change the column size for heading in jumbotron
+        EX15) Write a function to change the column size for post headings
         EX16) Write a function to remove the "Search" magnifying glass icon
         EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
         EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
         EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
     */
+      const addLinkToNav = function (content) {
+        const parent = document.querySelector(".nav");
 
-        /* ex10 */
-        const newLinkNavBar = function(){
-            let newLinkNavbar = document.querySelector(".container")
-            newLinkNavbar.innerHTML = "New Navigation"
+        const a = `<a class="p-2 text-muted" href="#">${content}</a>`;
+        parent.innerHTML += a;
+      };
+      addLinkToNav("new link");
 
-            console.log(newLinkNavbar)
+      const changeTitle = function () {
+        const title = document.querySelector(".jumbotron h1");
+        title.style.color = "white";
+      };
 
-        }
-        /* ex12 */
-        const newMainTitle = function(){
-            let newMainTitle = document.querySelector("h1")
-            newMainTitle.classList.toggle("myHeading")
-        }
-        /* ex13 */
+      changeTitle();
+      const changeJmbotronBg = function () {
+        const jumbotron = document.querySelector(".jumbotron");
+        jumbotron.classList.remove("bg-dark");
+        jumbotron.classList.remove("text-white");
+      };
+      changeJmbotronBg();
+      const removeOl = function () {
+        const ol = document.querySelector(
+          ".blog-sidebar > div:last-of-type ol "
+        );
+        ol.innerHTML = "";
+      };
+      removeOl();
+      const changeColSize = function () {
+        const cols = document.querySelectorAll(".jumbotron + div .col-md-6");
+        console.log(cols);
+        cols.forEach((col) => {
+          col.className = "col-md-4";
+        });
+      };
+      changeColSize();
+      const removeSearch = function () {
+        const div = document.querySelector(
+          ".blog-header .row div:last-of-type"
+        );
+        console.log(div);
+        div.children[0].remove();
+      };
+      removeSearch();
+      const addNewPost = (title = "New Post") => {
+        const parentElement = document.querySelector(".blog-main");
+        const nextSibling = document.querySelector(".blog-pagination");
 
-        const newJumbotronBackground = function(){
-            let newJumbotronBackground = document.querySelector(".jumbotron")
-            newJumbotronBackground.classList.toggle("myJumbotron")
-            console.log(newJumbotronBackground)
-        }
-        /* ex14 */
+        const newPostDiv = document.createElement("div");
+        newPostDiv.classList.add("blog-post");
 
-        const removeLinksElsewhere = function(){
-            let removeLinksElsewhere = document.querySelectorAll(".blog-sidebar div:nth-child(3) > ol")
-            for (let i = 0; i < removeLinksElsewhere.lenght; i++){
-                removeLinksElsewhere[i].remove()
-            }
-        }
+        const newPostTitle = document.createElement("h2");
+        newPostTitle.classList.add("blog-post-title");
+        newPostTitle.innerText = title;
+
+        newPostDiv.appendChild(newPostTitle);
+        parentElement.insertBefore(newPostDiv, nextSibling);
+      };
+      addNewPost();
+      const removeLastBlog = function () {
+        const btn = document.querySelectorAll(".blog-pagination a")[0];
+        btn.removeAttribute("href");
+        btn.addEventListener("click", function () {
+          const blogs = document.querySelectorAll(".blog-post");
+          blogs[blogs.length - 1].remove();
+        });
+      };
+      removeLastBlog();
+      const alertAuthors = function () {
+        const authors = document.querySelectorAll(
+          " main .blog-main .blog-post > h2 + p > a"
+        );
+        authors.forEach((a) => {
+          a.addEventListener("mouseenter", function (e) {
+            alert(e.target.innerText);
+          });
+        });
+      };
+      alertAuthors();
+      const trimPost = function () {
+        const posts = document.querySelectorAll(".blog-post p:nth-child(3)");
+        console.log(posts);
+        posts.forEach((post) => {
+          post.innerText = post.innerText.substring(150);
+        });
+      };
+      //trimPost();
     </script>
   </body>
 </html>
